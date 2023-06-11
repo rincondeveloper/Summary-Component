@@ -1,0 +1,264 @@
+:root {
+    // ### Primary
+
+--Light-red: hsl(0, 100%, 67%);
+--Orangey-yellow: hsl(39, 100%, 56%);
+--Green-teal: hsl(166, 100%, 37%);
+--Cobalt-blue: hsl(234, 85%, 45%);
+
+// ## Gradients
+
+--Light-slate-blue: hsl(252, 100%, 67%); //(background)
+--Light-royal-blue: hsl(241, 81%, 54%); //(background)
+
+--Violet-blue: hsla(256, 72%, 46%, 1); //(circle)
+--Persian-blue: hsla(241, 72%, 46%, 0); //(circle)
+
+// ### Neutral
+
+--White: hsl(0, 0%, 100%);
+--Pale-blue: hsl(221, 100%, 96%);
+--Light-lavender: hsl(241, 100%, 89%);
+--Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+span {
+    color: var(--Dark-gray-blue);
+}
+body {
+    font-size: 18px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: var(--Pale-blue);
+}
+
+.container {
+    background-color: var(--Pale-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: var(--White);
+    width: 40em;
+    height: 50%;
+    border-radius: 2em;
+    box-shadow: 10px 10px 15px #d8d8d8;    
+    overflow: hidden;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 2em;
+
+        background-image: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
+        width: 50%;
+        height: 100%;
+        gap: 1.5em;
+        padding: 2.6em 3.3em;
+        
+
+        &__results {
+            font-size: 1.3em;
+            color: var(--Light-lavender);
+        }
+
+        &__circle{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            width: 10em;
+            height: 10em;
+            border-radius: 50%;
+            background-image: linear-gradient(to bottom, var(--Violet-blue), var(--Persian-blue));
+            padding: 1em;
+
+            h2 {
+                font-size: 3.9em;
+                color: var(--White);
+            }
+
+            p {
+                font-size: 1em;
+                color: var(--Light-lavender);
+            }
+        }
+
+        &__great {
+            color: var(--White);
+            font-weight: 500;
+            font-size: 1.8em;
+        }
+
+        &__scored {
+            font-size: 1em;
+            color: var(--Light-lavender);
+        }
+    }
+
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        width: 50%;
+        height: 100%;
+        gap: 1.6em;
+
+        padding: 0em 2.6em;
+
+        &__h3 {
+            font-size: 1.3em;
+            color: var(--Dark-gray-blue);
+        }
+        &__data {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1em;
+
+            .e-reaction {
+                background-color: hsl(0, 100%, 95%);
+            }
+            .e-memory {
+                background-color: hsl(49, 84%, 95%);
+            }
+            .e-verbal {
+                background-color: hsl(114, 84%, 95%);
+            }
+            .e-visual {
+                background-color: hsl(240, 84%, 95%);
+            }
+
+            &__element {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                padding: .5em .8em;
+                border-radius: .7em;
+
+
+                &__type {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+
+                    &__icon {
+                        padding: .4em .5em 0 0;
+                    }
+
+                    &__name {
+                        p {
+                            font-weight: 700;
+                        }
+                        .p-reaction {
+                            color: var(--Light-red);
+                        }
+                        .p-memory {
+                            color: var(--Orangey-yellow);
+                        }
+                        .p-verbal {
+                            color: var(--Green-teal);
+                        }
+                        .p-visual {
+                            color: var(--Cobalt-blue);
+                        }
+                    }
+                }
+
+                &__scored {
+                    align-items: baseline;
+                    h5 {
+                        color: #949494;
+                        font-weight: 800;
+                        padding-top: .2em;
+                    }
+                }
+            }
+        }
+
+        &__btn{
+            button {
+                background-color: var(--Dark-gray-blue);
+                padding: .9em 0;
+                border-style:none;
+                border-radius: 2em;
+                width: 100%;
+                color: var(--White);
+                font-size: 1em;
+
+                transition: all ease 0.5s;
+            }    
+            button:hover {
+                background-color: var(--Light-royal-blue); 
+                cursor: pointer;             
+            }
+        }
+    }
+}¬
+
+.attribution {
+    padding-top: 2em;
+    font-size: 1em;
+    a {
+        text-decoration: none;
+        color: var(--Light-royal-blue);    
+    }
+}
+
+
+@media only screen and (max-width: 750px) {
+    body {
+        background-color: var(--White);
+    }
+    .container {
+        background-color: var(--White);
+    }
+    .main {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        background-color: var(--White);
+        border-radius: 0;
+        gap: 2em;
+        box-shadow: none;
+        margin-bottom: 5em;
+
+        &__left {
+            width: 100%;
+            border-radius: 0 0 2em 2em;
+        }
+        &__right {
+            background-color: var(--White);
+            width: 100%;
+        }
+    }
+    .attribution {
+        font-size: .9em;
+        padding: 0 auto;
+    }
+}
+
