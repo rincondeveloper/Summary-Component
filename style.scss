@@ -40,7 +40,7 @@ body {
 .container {
     background-color: var(--Pale-blue);
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -50,14 +50,14 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-end;
 
     background-color: var(--White);
     width: 40em;
-    height: 50%;
+    height: auto;
     border-radius: 2em;
     box-shadow: 10px 10px 15px #d8d8d8;    
     overflow: hidden;
-    margin-bottom: 2em;
 
     &__left {
         display: flex;
@@ -217,10 +217,15 @@ body {
             }
         }
     }
-}¬
+}
 
 .attribution {
-    padding-top: 2em;
+    display: flex;
+    gap: .6em;
+    position: absolute;
+    bottom: 0;
+
+    padding: 1em 0;
     font-size: 1em;
     a {
         text-decoration: none;
@@ -230,36 +235,25 @@ body {
 
 
 @media only screen and (max-width: 750px) {
-    body {
-        background-color: var(--White);
-    }
-    .container {
-        background-color: var(--White);
-    }
     .main {
         flex-direction: column;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        background-color: var(--White);
-        border-radius: 0;
-        gap: 2em;
-        box-shadow: none;
-        margin-bottom: 5em;
+        gap: 1.5em;
+
+        width: 25em;
+        height: auto;
+        margin: 2.5em 0;
 
         &__left {
             width: 100%;
-            border-radius: 0 0 2em 2em;
         }
         &__right {
-            background-color: var(--White);
             width: 100%;
+            padding-bottom: 2em;
         }
     }
+
     .attribution {
+        position: relative;
         font-size: .9em;
-        padding: 0 auto;
     }
 }
-

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --Light-red: hsl(0, 100%, 67%);
   --Orangey-yellow: hsl(39, 100%, 56%);
@@ -33,7 +32,7 @@ body {
 .container {
   background-color: var(--Pale-blue);
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -43,13 +42,13 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
   background-color: var(--White);
   width: 40em;
-  height: 50%;
+  height: auto;
   border-radius: 2em;
   box-shadow: 10px 10px 15px #d8d8d8;
   overflow: hidden;
-  margin-bottom: 2em;
 }
 .main__left {
   display: flex;
@@ -181,44 +180,36 @@ body {
   cursor: pointer;
 }
 
-¬ .attribution {
-  padding-top: 2em;
+.attribution {
+  display: flex;
+  gap: 0.6em;
+  position: absolute;
+  bottom: 0;
+  padding: 1em 0;
   font-size: 1em;
 }
-¬ .attribution a {
+.attribution a {
   text-decoration: none;
   color: var(--Light-royal-blue);
 }
 
 @media only screen and (max-width: 750px) {
-  body {
-    background-color: var(--White);
-  }
-  .container {
-    background-color: var(--White);
-  }
   .main {
     flex-direction: column;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    background-color: var(--White);
-    border-radius: 0;
-    gap: 2em;
-    box-shadow: none;
-    margin-bottom: 5em;
+    gap: 1.5em;
+    width: 25em;
+    height: auto;
+    margin: 2.5em 0;
   }
   .main__left {
     width: 100%;
-    border-radius: 0 0 2em 2em;
   }
   .main__right {
-    background-color: var(--White);
     width: 100%;
+    padding-bottom: 2em;
   }
   .attribution {
+    position: relative;
     font-size: 0.9em;
-    padding: 0 auto;
   }
 }/*# sourceMappingURL=style.css.map */
